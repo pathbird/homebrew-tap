@@ -5,24 +5,28 @@
 class Pbauthor < Formula
   desc ""
   homepage ""
-  version "0.0.11"
+  version "0.0.12"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.11/pbauthor_0.0.11_macos_amd64.tar.gz"
-      sha256 "69371aca9ea9b47de57ace3bba2712d97fd302b30a71e10fd42c9b9abd65fa17"
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_macos_amd64.tar.gz"
+      sha256 "7aafc71d380831a9baee11f1f41b0b717b1792abb043bb0248bf07d1a0925acb"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_macos_arm64.tar.gz"
+      sha256 "54df7d09d09d63d7848a8102147820c107749c142473fc57d636d8ae8993283c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.11/pbauthor_0.0.11_linux_amd64.tar.gz"
-      sha256 "0f8154de56dfbe79d20066b30061bc239a4aabc726e676c0281e15463c693f96"
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_linux_amd64.tar.gz"
+      sha256 "0dc6e5d40be6cd1a4372c75cff825ae45a0816320470225b7eb8fbd2b6d8ea9f"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.11/pbauthor_0.0.11_linux_arm64.tar.gz"
-      sha256 "ba094a4f2ad188f9c092beecd3e7936182b5efd9b5ad37387512606cd5115aab"
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_linux_arm64.tar.gz"
+      sha256 "69cf41582cd028101131f2c260e82476b8148c2d8f549352de202166a1bdd3f8"
     end
   end
 
