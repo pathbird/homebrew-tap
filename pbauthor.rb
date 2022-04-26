@@ -5,32 +5,43 @@
 class Pbauthor < Formula
   desc ""
   homepage ""
-  version "0.0.12"
-  bottle :unneeded
+  version "0.0.13"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_macos_amd64.tar.gz"
-      sha256 "7aafc71d380831a9baee11f1f41b0b717b1792abb043bb0248bf07d1a0925acb"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_macos_arm64.tar.gz"
-      sha256 "54df7d09d09d63d7848a8102147820c107749c142473fc57d636d8ae8993283c"
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.13/pbauthor_0.0.13_macos_arm64.tar.gz"
+      sha256 "79a6d788715c8072b7b3b17e2b035d013866ee76d9d1d610af8513750bc9adcd"
+
+      def install
+        bin.install "pbauthor"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.13/pbauthor_0.0.13_macos_amd64.tar.gz"
+      sha256 "cd54588975781c75587775709b32f17e17e06a2daca3a394e88a1a9ec49c6b20"
+
+      def install
+        bin.install "pbauthor"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_linux_amd64.tar.gz"
-      sha256 "0dc6e5d40be6cd1a4372c75cff825ae45a0816320470225b7eb8fbd2b6d8ea9f"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.12/pbauthor_0.0.12_linux_arm64.tar.gz"
-      sha256 "69cf41582cd028101131f2c260e82476b8148c2d8f549352de202166a1bdd3f8"
-    end
-  end
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.13/pbauthor_0.0.13_linux_arm64.tar.gz"
+      sha256 "f633262af9192998f664095bd81853d6b63c7e4864f9053e456cf67841c29d16"
 
-  def install
-    bin.install "pbauthor"
+      def install
+        bin.install "pbauthor"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/pathbird/pbauthor/releases/download/v0.0.13/pbauthor_0.0.13_linux_amd64.tar.gz"
+      sha256 "1b1d1870274a33b8aaa8c22ec8bb544d10b2e84b0a0369fb1ed7088c88add78d"
+
+      def install
+        bin.install "pbauthor"
+      end
+    end
   end
 end
